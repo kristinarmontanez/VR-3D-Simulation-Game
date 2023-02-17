@@ -1,1 +1,2 @@
-# VR-3D-Simulation-Game
+# VirtualBartender-SimulationChallenge
+Simulation Challenge Group for Capstone CS467 - Virtual Bartender

@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Midway Scene.unity
+    guid: 2764c031b2d86dd44954e779c308df51
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8e13242c2acefe0478a2342440016706, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1cafa809d6cb83a4fb3c561ea8375c52, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 7e3aaf680577313479ecd2c8782e0c64, type: 2}
