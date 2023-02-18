@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50608f40a4ff420d8f8610abd5622bc1, type: 3}
+  m_Name: Single Shot of Vodka
+  m_EditorClassIdentifier: 
+  _container: {fileID: 11400000, guid: 3ec4fb2eab053694e9774d791e3e9ae1, type: 2}
+  _ingredients:
+  - {fileID: 11400000, guid: 212b9784607dc2d4b8538db0ce959999, type: 2}
+  - {fileID: 0}
+  _garnishNeeded: 0
