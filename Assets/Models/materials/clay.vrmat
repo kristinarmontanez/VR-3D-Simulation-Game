@@ -1,0 +1,433 @@
+<vrmat>
+<Asset renderer="vray" url="/clay/Reflection/Texture" type="texture" layout="" >
+ <plugin>
+  <vrayplugin version="4" type="texture" name="TexFresnel" >
+   <parameters>
+    <parameter handler="default" listType="none" type="acolor texture" name="black_color_tex" label="Perpendicular Texture" />
+    <parameter handler="default" listType="none" type="acolor" name="black_color" label="Perpendicular" >
+     <value>
+      <r>1.000000</r>
+      <g>1.000000</g>
+      <b>1.000000</b>
+      <a>1.000000</a>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="use_multiplier_as_exponent" label="Multiplier as exponent" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float texture" name="refract_ior_tex" label="Refract IOR Texture" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="invert" label="invert" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="refract_ior" label="Refract IOR" >
+     <value>1.550000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="fresnel_ior" label="IOR" >
+     <value>1.550000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="black_color_tex_mult" label="Perpendicular Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="refract_ior_tex_mult" label="Refract IOR Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="acolor texture" name="white_color_tex" label="Parallel Texture" />
+    <parameter handler="default" listType="none" type="float texture" name="fresnel_ior_tex" label="IOR Texture" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="white_color_tex_mult" label="Parallel Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="acolor" name="white_color" label="Parallel" >
+     <value>
+      <r>0.000000</r>
+      <g>0.000000</g>
+      <b>0.000000</b>
+      <a>1.000000</a>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="fresnel_ior_tex_mult" label="IOR Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+   </parameters>
+  </vrayplugin>
+ </plugin>
+</Asset>
+<Asset renderer="vray" url="/clay/Reflection" type="BRDF" layout="ReflectionLayer" >
+ <plugin>
+  <vrayplugin version="4" type="BRDF" name="BRDFReflection" >
+   <parameters>
+    <parameter handler="default" listType="none" type="float" name="soften_edge" label="Soften" >
+     <value>0.000000</value>
+    </parameter>
+    <parameter handler="None" listType="none" type="float" name="cutoff" label="cutoff" >
+     <value>0.010000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float texture" name="hilightGlossiness_tex" label="Texture" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" gammaCorrect="1" listType="none" type="color" name="color" label="Filter" >
+     <value>
+      <r>1.000000</r>
+      <g>1.000000</g>
+      <b>1.000000</b>
+     </value>
+    </parameter>
+    <parameter handler="ComboBoxHandler" listType="none" type="integer" name="shaderType" label="Shader Type" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float texture" name="anisotropy_tex" label="Anisotropy Texture" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="plugin" name="anisotropy_uvwgen" label="anisotropy_uvwgen" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="integer" name="subdivs" label="Subdivs" >
+     <value>8</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="acolor texture" name="transparency_tex" label="Texture" >
+     <value>/clay/Reflection/Texture</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="integer" name="imap_samples" label="Samples" >
+     <value>20</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="reflect_dim_distance_falloff" label="Dim Falloff" >
+     <value>0.000000</value>
+    </parameter>
+    <parameter handler="DoubleSpinBoxHandler" listType="none" type="float texture" name="anisotropy_rotation" label="Rotation" >
+     <value>0.000000</value>
+    </parameter>
+    <parameter handler="None" listType="none" type="bool" name="trace_reflections" label="trace_reflections" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="ComboBoxHandler" listType="none" type="integer" name="glossyAsGI" label="Treat glossy as GI" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="None" listType="none" type="integer" name="trace_depth" label="Trace depth" >
+     <value>5</value>
+    </parameter>
+    <parameter handler="None" listType="none" type="bool" name="back_side" label="back_side" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="ComboBoxHandler" listType="none" type="integer" name="affect_alpha" label="Affect channels" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="color" name="reflect_exit_color" label="Exit color" >
+     <value>
+      <r>0.000000</r>
+      <g>0.000000</g>
+      <b>0.000000</b>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="color_tex_mult" label="color_tex_mult" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="hilightGlossiness" label="Hilight" >
+     <value>0.700000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="reflectionGlossiness_tex_mult" label="Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="anisotropy_use_map_channel" label="Use Map Channel" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="integer" name="imap_max_rate" label="Max rate" >
+     <value>-1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="imap_norm_thresh" label="Nrm Thresh" >
+     <value>0.400000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="anisotropy_rotation_tex_mult" label="Rotation Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="reflectionGlossiness" label="Refl." >
+     <value>0.700000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="hilightGlossiness_tex_mult" label="Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="reflect_dim_distance_on" label="On" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="anisotropy_tex_mult" label="Anisotropy Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="interpolation_on" label="Interpolation" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="transparency_tex_mult" label="Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="reflect_dim_distance" label="Distance" >
+     <value>100.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="integer" name="imap_min_rate" label="Min rate" >
+     <value>-1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="imap_color_thresh" label="Clr Thresh" >
+     <value>0.250000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="integer" name="anisotropy_map_channel" label="Map Channel" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" gammaCorrect="1" listType="none" type="acolor texture" name="color_tex" label="color_tex" />
+    <parameter handler="DoubleSpinBoxHandler" listType="none" type="float texture" name="anisotropy" label="Anisotropy" >
+     <value>0.000000</value>
+    </parameter>
+    <parameter handler="ComboBoxHandler" listType="none" type="integer" name="anisotropy_local_axis" label="Local Axis" >
+     <value>2</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="color" name="transparency" label="Reflection" >
+     <value>
+      <r>1.000000</r>
+      <g>1.000000</g>
+      <b>1.000000</b>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float texture" name="anisotropy_rotation_tex" label="Rotation Texture" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float texture" name="reflectionGlossiness_tex" label="Texture" >
+     <value></value>
+    </parameter>
+   </parameters>
+  </vrayplugin>
+ </plugin>
+</Asset>
+<Asset renderer="vray" url="/clay/Diffuse" type="BRDF" layout="DiffuseLayer" >
+ <plugin>
+  <vrayplugin version="4" type="BRDF" name="BRDFDiffuse" >
+   <parameters>
+    <parameter handler="default" gammaCorrect="1" listType="none" type="acolor texture" name="color_tex" label="Texture" />
+    <parameter handler="default" listType="none" type="bool" name="use_irradiance_map" label="Use Irradiance Map" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" gammaCorrect="1" listType="none" type="color" name="color" label="Color" >
+     <value>
+      <r>0.921569</r>
+      <g>0.921569</g>
+      <b>0.921569</b>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="use_color_tex_alpha_as_transparency" label="Use color texture as transparency" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="gi_transparency_cutoff" label="GI transparency cutoff" >
+     <value>0.300000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="color_tex_mult" label="Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float texture" name="roughness" label="Roughness" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="transparency_tex_mult" label="Transp. Texture Multiplier" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="color" name="transparency" label="Transparency" >
+     <value>
+      <r>0.000000</r>
+      <g>0.000000</g>
+      <b>0.000000</b>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="acolor texture" name="transparency_tex" label="Transp. Texture" />
+   </parameters>
+  </vrayplugin>
+ </plugin>
+</Asset>
+<Asset renderer="vray" url="/clay" type="material" layout="defvrmat" >
+ <plugin>
+  <vrayplugin version="4" type="material" name="MtlASGVIS" >
+   <parameters>
+    <parameter handler="default" listType="none" type="bool" name="compute_bump_for_shadows" label="Compute bump for shadows" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="displace_continuity" label="Keep continuity" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="refract_tex_mult" label="refract_tex_mult" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="TextureHandler" listType="none" type="plugin" name="displace_tex" label="displace_tex" >
+     <value></value>
+    </parameter>
+    <parameter handler="PluginListPicker" listType="none" type="list" name="channels" label="Material result" >
+     <value>
+      <list/>
+     </value>
+    </parameter>
+    <parameter isUserData="1" handler="default" listType="none" type="integer" name="trace_depth_dummy" label="Refraction Max Depth" >
+     <value>5</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="alpha" label="Alpha Contribution" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="displace_view_dependent" label="View dependent" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="cast_shadow" label="Cast Shadows" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="bump_delta_scale" label="bump_delta_scale" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter isUserData="1" handler="default" listType="none" type="bool" name="effected_by_mtl_override" label="Can be Overridden" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="displace_water_level" label="Water Level" >
+     <value>0.000000</value>
+    </parameter>
+    <parameter isUserData="1" handler="default" listType="none" type="bool" name="trace_reflections_dummy" label="Trace Reflections" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="gi_tex_mult" label="gi_tex_mult" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="displace_tex_mult" label="displace_tex_mult" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="displace_edge_length" label="Edge length" >
+     <value>4.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="displace_use_globals" label="Use globals" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="TextureHandler" listType="none" type="plugin" name="gi_tex" label="gi_tex" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="color" name="refract_color" label="refract_color" >
+     <value>
+      <r>0.000000</r>
+      <g>0.000000</g>
+      <b>0.000000</b>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="override_reflect" label="Reflection" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="ignore_objects" label="On" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="override_gi" label="GI" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float texture" name="bump_tex_mult_tex" label="Bump amount texture" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="integer" name="displace_max_subdivs" label="Max subdivs" >
+     <value>256</value>
+    </parameter>
+    <parameter isUserData="1" handler="default" listType="none" type="bool" name="reflect_on_backside_dummy" label="Reflect on Backside" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="override_bg" label="Background" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="only_visible_in_secondary" label="Only in Secondary" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="color" name="gi_color" label="gi_color" >
+     <value>
+      <r>0.000000</r>
+      <g>0.000000</g>
+      <b>0.000000</b>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="color" name="reflect_color" label="reflect_color" >
+     <value>
+      <r>0.000000</r>
+      <g>0.000000</g>
+      <b>0.000000</b>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="alpha_tex_mult" label="alpha_tex_mult" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="TextureHandler" listType="none" type="plugin" name="bump_tex" label="bump_tex" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="color" name="bg_color" label="bg_color" >
+     <value>
+      <r>0.000000</r>
+      <g>0.000000</g>
+      <b>0.000000</b>
+     </value>
+    </parameter>
+    <parameter handler="TextureHandler" listType="none" type="plugin" name="reflect_tex" label="reflect_tex" >
+     <value></value>
+    </parameter>
+    <parameter handler="ComboBoxHandler" listType="none" type="integer" name="map_type" label="Bump type" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="bump_shadows" label="bump_shadows" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="TextureHandler" listType="none" type="plugin" name="refract_tex" label="refract_tex" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="double_sided" label="Double-Sided" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="reflect_tex_mult" label="reflect_tex_mult" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter isUserData="1" handler="default" listType="none" type="bool" name="trace_refractions_dummy" label="Trace Refractions" >
+     <value>1</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="bump_tex_mult" label="bump_tex_mult" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="plugin" name="normal_uvwgen" label="Normal uvw" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="override_refract" label="Refraction" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="displace_shift" label="Shift" >
+     <value>0.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="disable_volume_fog" label="Disable Volume Fog" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="short_circuit" label="Optimize exclusion" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="TextureHandler" listType="none" type="plugin" name="bg_tex" label="bg_tex" >
+     <value></value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="bump_on" label="Bump" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="color" name="material_id_color" label="ID Color" >
+     <value>
+      <r>0.000000</r>
+      <g>0.000000</g>
+      <b>0.000000</b>
+     </value>
+    </parameter>
+    <parameter handler="default" listType="none" type="float" name="bg_tex_mult" label="bg_tex_mult" >
+     <value>1.000000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="bool" name="displace_on" label="Displacement" >
+     <value>0</value>
+    </parameter>
+    <parameter handler="default" listType="plugin" type="list" name="brdfs" label="brdfs" >
+     <value>
+      <list>
+       <entry>/clay/Reflection</entry>
+       <entry>/clay/Diffuse</entry>
+      </list>
+     </value>
+    </parameter>
+    <parameter isUserData="1" handler="default" listType="none" type="float" name="cutoff_dummy" label="Cutoff" >
+     <value>0.010000</value>
+    </parameter>
+    <parameter handler="default" listType="none" type="acolor texture" name="alpha_tex" label="alpha_tex" />
+   </parameters>
+  </vrayplugin>
+ </plugin>
+</Asset>
+</vrmat>
